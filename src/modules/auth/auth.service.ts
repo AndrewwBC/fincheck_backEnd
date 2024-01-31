@@ -33,6 +33,7 @@ export class AuthService {
       throw new UnauthorizedException('Invalid Credentials');
     }
 
+    console.log(user);
     const accessToken = await this.generateAccessToken(user.id);
 
     return { accessToken };
@@ -77,6 +78,7 @@ export class AuthService {
         },
       },
     });
+    console.log(user.id);
     const accessToken = await this.generateAccessToken(user.id);
 
     return { accessToken };
